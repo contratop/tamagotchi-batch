@@ -1,7 +1,7 @@
-Bienvenue sur ce tamagotchi en shell script.
+Bienvenido a tu tamagotchi en shell script.
 
-Liste des options :
+Lista de opciones :
 
-    --help     affiche cette aide 🤔
-    --reset    réinitialise le tamagotchi ☠️
+    --help     Obtener ayuda 🤔
+    --reset    Reinicializar el tamagotchi ☠️
 

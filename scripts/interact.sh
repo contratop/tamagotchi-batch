@@ -3,46 +3,46 @@ TAMAGOTCHI_DIRECTORY=`dirname $0`/..
 DATA_DIRECTORY="$TAMAGOTCHI_DIRECTORY/data"
 TAMAGOTCHI_NAME=`cat $DATA_DIRECTORY/name`
 
-# Permet d'utiliser les fonctions sur l'humeur du tamagotchi
+# Permite usar las funciones sobre el estado de ánimo del tamagotchi
 source "$TAMAGOTCHI_DIRECTORY/functions/mood.sh"
 
 get_mood_value
 echo $MOOD_VALUE | grep death > /dev/null
 if [ $? -eq 0 ]
 then
-    echo $TAMAGOTCHI_NAME est mort. 😇
-    echo 'Vous pouvez recréer un nouveau tamagotchi avec "./tamagotchi.sh --reset"'
+    echo ¡$TAMAGOTCHI_NAME ha muerto! 😇
+    echo 'Puedes crear un nuevo tamagotchi con "./tamagotchi.sh --reset"'
     exit
 fi
 
-echo "[j] Jouer avec $TAMAGOTCHI_NAME"
-echo "[n] Nourrir $TAMAGOTCHI_NAME"
-echo "[c] Nettoyer le caca de $TAMAGOTCHI_NAME"
-echo "[s] Soigner $TAMAGOTCHI_NAME"
-echo "[q] Quitter"
+echo "[j] Jugar con $TAMAGOTCHI_NAME"
+echo "[n] Alimentar a $TAMAGOTCHI_NAME"
+echo "[c] Limpiar las caquitas de $TAMAGOTCHI_NAME"
+echo "[s] Curar a $TAMAGOTCHI_NAME"
+echo "[q] Salir"
 
-# retour à la ligne
+# Salto de línea
 echo
 
-read -p "Que voulez-vous faire ? " INTERACTION
+read -p "¿Qué quieres hacer? " INTERACTION
 
 case $INTERACTION in
     [Jj])
         clear
-        echo Vous jouez avec $TAMAGOTCHI_NAME. 🦋
+        echo Estás jugando con $TAMAGOTCHI_NAME. 🦋
 
         get_current_value sad
         SAD_VALUE=$CURRENT_VALUE
         ((SAD_VALUE--))
         set_new_value sad $SAD_VALUE
         
-        echo $TAMAGOTCHI_NAME est content. 😊
+        echo $TAMAGOTCHI_NAME está contento. 😊
         echo
-        read -p "Appuyer sur une touche pour continuer..."
+        read -p "Presiona una tecla para continuar..."
         ;;
     [Nn])
         clear
-        echo Vous nourrissez $TAMAGOTCHI_NAME. 🌭🍟🍰
+        echo Estás alimentando a $TAMAGOTCHI_NAME. 🌭🍟🍰
         
         get_current_value hunger
         HUNGER_VALUE=$CURRENT_VALUE
@@ -54,20 +54,20 @@ case $INTERACTION in
             ((DISEASE_VALUE++))
             set_new_value disease $DISEASE_VALUE
 
-            echo Vous avez trop gavé $TAMAGOTCHI_NAME ! 🤢
+            echo ¡Has sobrealimentado a $TAMAGOTCHI_NAME! 🤢
         else
             ((HUNGER_VALUE--))
             set_new_value hunger $HUNGER_VALUE
 
-            echo $TAMAGOTCHI_NAME est rassasié ! 😬
+            echo ¡$TAMAGOTCHI_NAME está saciado! 😬
         fi
         
         echo
-        read -p "Appuyer sur une touche pour continuer..."
+        read -p "Presiona una tecla para continuar..."
         ;;
     [Cc])
         clear
-        echo Vous nettoyez $TAMAGOTCHI_NAME. ✨
+        echo Estás limpiando a $TAMAGOTCHI_NAME. ✨
         
         get_current_value poop
         POOP_VALUE=$CURRENT_VALUE
@@ -79,20 +79,20 @@ case $INTERACTION in
             ((SAD_VALUE++))
             set_new_value sad $SAD_VALUE
 
-            echo "$TAMAGOTCHI_NAME était déjà propre, ça l'ennerve. 😤"
+            echo "$TAMAGOTCHI_NAME ya estaba limpio, ¡se está molestando! 😤"
         else
             ((POOP_VALUE--))
             set_new_value poop $POOP_VALUE
 
-            echo $TAMAGOTCHI_NAME se sent plus propre ! 😚
+            echo ¡$TAMAGOTCHI_NAME se siente más limpio! 😚
         fi
         
         echo
-        read -p "Appuyer sur une touche pour continuer..."
+        read -p "Presiona una tecla para continuar..."
         ;;
     [Ss])
         clear
-        echo Vous soignez $TAMAGOTCHI_NAME. 🚑
+        echo Estás curando a $TAMAGOTCHI_NAME. 🚑
         
         get_current_value disease
         DISEASE_VALUE=$CURRENT_VALUE
@@ -102,22 +102,22 @@ case $INTERACTION in
             set_new_value disease 4
             set_new_value sad 5
 
-            echo "$TAMAGOTCHI_NAME n'était pas malade, il fait une réaction au médicament ! 😱"
+            echo "$TAMAGOTCHI_NAME no estaba enfermo, ¡está teniendo una reacción al medicamento! 😱"
         else
             ((DISEASE_VALUE--))
             set_new_value disease $DISEASE_VALUE
 
-            echo $TAMAGOTCHI_NAME se sent mieux ! 🤕
+            echo ¡$TAMAGOTCHI_NAME se siente mejor! 🤕
         fi
         
         echo
-        read -p "Appuyer sur une touche pour continuer..."
+        read -p "Presiona una tecla para continuar..."
         ;;
     [Qq])
-        echo "$TAMAGOTCHI_NAME est triste de vous voir partir ! 👋"
+        echo ¡$TAMAGOTCHI_NAME está triste de verte ir! 👋
         exit
         ;;
 esac
 
-# On relance le tamagotchi pour actualiser le statut
+# Se reinicia el tamagotchi para actualizar su estado
 $TAMAGOTCHI_DIRECTORY/tamagotchi.sh

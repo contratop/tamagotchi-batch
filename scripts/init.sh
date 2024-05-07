@@ -11,7 +11,7 @@ clear
 # Nom du tamagotchi
 while [ -z $TAMAGOTCHI_NAME ] # tant que la chaine $TAMAGOTCHI_NAME est vide
 do
-    read -p "Quel est le nom de votre tamagotchi ? " TAMAGOTCHI_NAME
+    read -p "Cual es el nombre del tamagotchi ? " TAMAGOTCHI_NAME
 done
 
 # Sauvegarde du nom dans un fichier ./data/name

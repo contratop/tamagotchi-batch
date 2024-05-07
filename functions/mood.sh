@@ -82,25 +82,25 @@ function get_mood_text()
 
     case $MOOD_VALUE in
         death_disease)
-            MOOD_TEXT="est mort de maladie. 🤮"
+            MOOD_TEXT="Fallecio por enfermedad. 🤮"
             ;;
         death_age)
-            MOOD_TEXT="est mort de vieillesse. ☠️"
+            MOOD_TEXT="Murio de viejo. ☠️"
             ;;
         disease)
-            MOOD_TEXT="est malade. 🤢"
+            MOOD_TEXT="Esta enfermo. 🤢"
             ;;
         poop)
-            MOOD_TEXT="est sâle. 😳"
+            MOOD_TEXT="Esta sucio. 😳"
             ;;
         hunger)
-            MOOD_TEXT="a faim. 🤤"
+            MOOD_TEXT="Tiene hambre. 🤤"
             ;;
         sad)
-            MOOD_TEXT="est fâché. 😡"
+            MOOD_TEXT="Esta enfadado. 😡"
             ;;
         happy)
-            MOOD_TEXT="est heureux ! 🤗"
+            MOOD_TEXT="Esta feliz! 🤗"
             ;;
     esac
 }
