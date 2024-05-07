@@ -1,4 +1,4 @@
-# tamagotchi-batch
+# tamagotchi-batch (Spanish Translated)
 
 A shell script tamagotchi.
 
@@ -16,3 +16,5 @@ Charles-Henri est mort de maladie. 🤮
 💩 ☑️
 🤒 ●●●●●
 ```
+
+Author: tentacode
