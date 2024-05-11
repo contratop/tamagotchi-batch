@@ -1,6 +1,6 @@
 # tamagotchi-batch (Spanish Translated)
 
-A shell script tamagotchi.
+A shell script tamagotchi, traducido al Español.
 
 Run `./tamagotchi.sh`.
 
@@ -10,7 +10,7 @@ Run `./tamagotchi.sh`.
      [   ]
       | |
 
-Charles-Henri est mort de maladie. 🤮
+Charles-Henri murió de enfermedad. 🤮
 😭 ●●●●●
 🍔 ☑️
 💩 ☑️
